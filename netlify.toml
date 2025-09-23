@@ -1,5 +1,5 @@
 [build]
-  command = "make build && mv dist/uv.html dist/index.html"
+  command = "pip install uv && make build && mv dist/uv.html dist/index.html"
   publish = "dist"
 
 [build.environment]
