@@ -1,7 +1,7 @@
 <article>
 # uv Quick Reference
 
-This reference provides essential uv commands organized by workflow. For comprehensive documentation, visit the [uv docs](https://docs.astral.sh/uv/).
+This reference provides essential uv commands organized by workflow. For comprehensive documentation, visit the [uv docs](https://docs.astral.sh/uv/). Need help getting started? Check out [how to install uv](https://pydevtools.com/handbook/how-to/how-to-install-uv/) and [create your first Python project](https://pydevtools.com/handbook/tutorial/create-your-first-python-project/).
 
 ## Project Creation
 
@@ -19,7 +19,7 @@ This reference provides essential uv commands organized by workflow. For compreh
 |---------|-------------|
 | `uv add requests` | Add production dependency |
 | `uv add --dev pytest` | Add development dependency |
-| `uv add -r requirements.txt` | Import from requirements file |
+| `uv add -r requirements.txt` | Import from requirements file ([migration guide](https://pydevtools.com/handbook/how-to/migrate-requirements.txt/)) |
 | `uv remove requests` | Remove dependency |
 | `uv sync` | Install dependencies from lockfile |
 | `uv lock` | Update lockfile |
@@ -34,6 +34,8 @@ This reference provides essential uv commands organized by workflow. For compreh
 | `uv add click --script myscript.py` | Add script dependency |
 | `uv run myscript.py` | Execute script |
 | `uv run --with requests myscript.py` | Run with additional packages |
+
+Want to learn about self-contained scripts? See [how to write self-contained Python scripts](https://pydevtools.com/handbook/how-to/how-to-write-a-self-contained-script/).
 
 ## Tool Management
 
@@ -54,6 +56,8 @@ This reference provides essential uv commands organized by workflow. For compreh
 | `uv python pin 3.12` | Pin project to version |
 | `uv run --python 3.12 python` | Use specific version |
 
+Learn more about [managing Python versions in uv projects](https://pydevtools.com/handbook/how-to/managing-python-versions-in-your-uv-projects/) and [adding Python to your system PATH](https://pydevtools.com/handbook/how-to/how-to-add-python-to-your-system-path-with-uv/).
+
 ## Building & Publishing
 
 | Command | Description |
@@ -61,6 +65,8 @@ This reference provides essential uv commands organized by workflow. For compreh
 | `uv build` | Build distribution packages |
 | `uv publish` | Upload to PyPI |
 | `uv publish --publish-url https://test.pypi.org/legacy/` | Upload to TestPyPI |
+
+Ready to publish? Follow our [complete PyPI publishing guide](https://pydevtools.com/handbook/tutorial/publishing-your-first-python-package-to-pypi/).
 
 ## Version Management
 
@@ -77,6 +83,8 @@ This reference provides essential uv commands organized by workflow. For compreh
 |---------|-------------|
 | `uv venv` | Create virtual environment |
 | `uv venv --python 3.12` | Create with specific Python |
+
+New to virtual environments? Read [why you should use a virtual environment](https://pydevtools.com/handbook/explanation/why-should-i-use-a-virtual-environment/).
 
 ## Utility Commands
 
@@ -105,6 +113,8 @@ cd <repo>
 uv sync
 uv run pytest
 ```
+
+Need help with testing? Check out [setting up testing with pytest and uv](https://pydevtools.com/handbook/tutorial/setting-up-testing-with-pytest-and-uv/) and [how to run tests using uv](https://pydevtools.com/handbook/how-to/how-to-run-tests-using-uv/).
 
 ### Quick Script
 ```bash
