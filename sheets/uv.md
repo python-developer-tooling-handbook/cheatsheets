@@ -7,33 +7,36 @@ This reference provides essential uv commands organized by workflow. For compreh
 
 | Command | Description |
 |---------|-------------|
-| `uv init` | Initialize project in current directory |
-| `uv init myproject` | Create new project directory |
-| `uv init --lib` | Initialize library project |
-| `uv init --app` | Initialize application project |
+| `uv init` | Initialize new Python project in current directory with pyproject.toml |
+| `uv init myproject` | Create new project directory and initialize with project structure |
+| `uv init --package` | Create project to be built as Python package |
+| `uv init --app` | Create application project |
+| `uv init --lib` | Create library project |
+| `uv init --script` | Create single-file script |
+| `uv init --bare` | Create only pyproject.toml file |
 | `uv init --python 3.12` | Specify Python version |
 
 ## Dependency Management
 
 | Command | Description |
 |---------|-------------|
-| `uv add requests` | Add production dependency |
-| `uv add --dev pytest` | Add development dependency |
+| `uv add requests` | Add production dependency to project and update lockfile |
+| `uv add --dev pytest` | Add development dependency for testing and development tools |
 | `uv add -r requirements.txt` | Import from requirements file ([migration guide](https://pydevtools.com/handbook/how-to/migrate-requirements.txt/)) |
 | `uv remove requests` | Remove dependency |
-| `uv sync` | Install dependencies from lockfile |
-| `uv lock` | Update lockfile |
-| `uv lock --upgrade` | Upgrade all dependencies |
+| `uv sync` | Update project environment and refresh lockfile with latest compatible versions |
+| `uv lock` | Generate or update lockfile |
+| `uv lock --upgrade` | Upgrade all dependencies in lockfile |
 | `uv tree` | View dependency tree |
 
 ## Script Management
 
 | Command | Description |
 |---------|-------------|
-| `uv init --script myscript.py` | Create script with metadata |
-| `uv add click --script myscript.py` | Add script dependency |
-| `uv run myscript.py` | Execute script |
-| `uv run --with requests myscript.py` | Run with additional packages |
+| `uv init --script myscript.py` | Create single-file script with inline metadata |
+| `uv add --script myscript.py click` | Add dependency to script inline metadata |
+| `uv run myscript.py` | Execute Python script in managed virtual environment with project dependencies |
+| `uv run --with requests myscript.py` | Run script with temporary dependencies without adding to project |
 
 Want to learn about self-contained scripts? See [how to write self-contained Python scripts](https://pydevtools.com/handbook/how-to/how-to-write-a-self-contained-script/).
 
@@ -41,8 +44,8 @@ Want to learn about self-contained scripts? See [how to write self-contained Pyt
 
 | Command | Description |
 |---------|-------------|
-| `uvx pytest` | Run tool in isolated environment |
-| `uv tool install ruff` | Install tool globally |
+| `uvx pytest` | Run tool in ephemeral environment |
+| `uv tool install ruff` | Install tool globally for system-wide use |
 | `uv tool list` | List installed tools |
 | `uv tool upgrade ruff` | Update specific tool |
 | `uv tool upgrade --all` | Update all tools |
@@ -52,9 +55,9 @@ Want to learn about self-contained scripts? See [how to write self-contained Pyt
 | Command | Description |
 |---------|-------------|
 | `uv python list` | Show available Python versions |
-| `uv python install 3.12` | Install Python version |
-| `uv python pin 3.12` | Pin project to version |
-| `uv run --python 3.12 python` | Use specific version |
+| `uv python install 3.12` | Download and install specific Python version for project use |
+| `uv python pin 3.12` | Pin project to specific Python version |
+| `uv run --python 3.12 python` | Run Python using specific version |
 
 Learn more about [managing Python versions in uv projects](https://pydevtools.com/handbook/how-to/managing-python-versions-in-your-uv-projects/) and [adding Python to your system PATH](https://pydevtools.com/handbook/how-to/how-to-add-python-to-your-system-path-with-uv/).
 
