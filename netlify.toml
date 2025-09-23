@@ -1,5 +1,5 @@
 [build]
-  command = "pip install uv && make build && mv dist/uv.html dist/index.html"
+  command = "curl -LsSf https://astral.sh/uv/install.sh | sh && source $HOME/.cargo/env && uv run --with jinja2 --with markdown generate.py && mv dist/uv.html dist/index.html"
   publish = "dist"
 
 [build.environment]
