@@ -25,6 +25,19 @@ def process_markdown_content(content):
     content = content.replace('<article>', '').replace('</article>', '')
     return content.strip()
 
+def copy_static_assets(output_dir):
+    """Copy static assets like images to the output directory."""
+    images_dir = Path('images')
+    if images_dir.exists():
+        output_images_dir = output_dir / 'images'
+        output_images_dir.mkdir(exist_ok=True)
+
+        for image_file in images_dir.glob('*'):
+            if image_file.is_file():
+                import shutil
+                shutil.copy2(image_file, output_images_dir)
+                print(f"Copied {image_file} to {output_images_dir}")
+
 def generate_site():
     """Generate static HTML files from Markdown sheets."""
     # Setup paths
@@ -34,6 +47,9 @@ def generate_site():
 
     # Create output directory
     output_dir.mkdir(exist_ok=True)
+
+    # Copy static assets
+    copy_static_assets(output_dir)
 
     # Setup Jinja2 environment
     env = Environment(loader=FileSystemLoader('.'))
