@@ -59,7 +59,7 @@ Want to learn about self-contained scripts? See [how to write self-contained Pyt
 | `uv python pin 3.12` | Pin project to specific Python version |
 | `uv run --python 3.12 python` | Run Python using specific version |
 
-Learn more about [managing Python versions in uv projects](https://pydevtools.com/handbook/how-to/managing-python-versions-in-your-uv-projects/) and [adding Python to your system PATH](https://pydevtools.com/handbook/how-to/how-to-add-python-to-your-system-path-with-uv/).
+Learn more about [managing Python versions in uv projects](https://pydevtools.com/blog/managing-python-versions-in-your-uv-projects/) and [adding Python to your system PATH](https://pydevtools.com/handbook/how-to/how-to-add-python-to-your-system-path-with-uv/).
 
 ## Building & Publishing
 
